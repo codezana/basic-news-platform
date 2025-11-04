@@ -9,6 +9,7 @@
         </h3>
 
         <form wire:submit.prevent="update" class="space-y-6">
+                        @csrf
             <div>
                 <label class="block text-sm font-semibold text-gray-700">Title</label>
                 <input type="text" wire:model.live.debounce.500ms="title"
@@ -25,7 +26,7 @@
 
             <div>
                 <label class="block text-sm font-semibold text-gray-700">Image Upload</label>
-                <input type="file" wire:model="image"
+                <input type="file" wire:model.live.debounce.500ms="image"
                     class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
                 @error('image') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 

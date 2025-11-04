@@ -5,6 +5,7 @@
         </h3>
 
         <form wire:submit.prevent="save" class="space-y-6">
+            @csrf
             <div>
                 <label class="block text-sm font-semibold text-gray-700">Title</label>
                 <input type="text" wire:model.live.debounce.500ms="title"
@@ -37,5 +38,3 @@
     </div>
 
 </div>
-
-  
